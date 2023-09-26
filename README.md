@@ -94,6 +94,28 @@ Response
 }
 ```
 
+### POST & GET /custom
+
+Creates a short custom link based on the provided long URL.
+Request Body
+```
+{
+  "long_url": "https://example.com/very/long/url"
+}
+```
+```
+{
+  "short_url": "custom"
+}
+```
+Response
+```
+{
+  "short_url": "http://localhost:5000/custom"
+}
+```
+
+
 ### GET /<short_id>
 Redirects the user to the corresponding long URL for a given short link if it exists.
 
@@ -101,6 +123,8 @@ Redirects the user to the corresponding long URL for a given short link if it ex
 
 ### InputLink
 Component for creating short links.
+### CustomLink
+Component for creating short custom links.
 ### App
 Main application component.
 
