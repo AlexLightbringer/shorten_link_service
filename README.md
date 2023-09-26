@@ -50,6 +50,8 @@ React will be running at http://localhost:3000.
 
 ## Usage
 
+To shorten a long URL:
+
 1. Open the application in your browser by going to http://localhost:3000.
 
 2. Enter the long URL you want to shorten in the input field.
@@ -58,7 +60,21 @@ React will be running at http://localhost:3000.
 
 4. The short link will be displayed below. Click the "Copy" button to copy it to your clipboard.
 
-5. You can use the short link to navigate to the corresponding long URL.
+To custom a long URL:
+
+1. Enter the long URL you want to shorten into the input field.
+   
+2. Click the "Send" button to generate a short link.
+   
+3. To create a custom short link
+   
+4. Enter the desired custom short link in the "Enter custom short link" field.
+   
+5. Click the "Save" button to save the custom short link.
+    
+6. The generated short link will be displayed below. To copy it to your clipboard, click the "Copy" button.
+
+You can use the short link (either the automatically generated one or the custom one you saved) to navigate to the corresponding long URL.
 
 ## API
 
