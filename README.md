@@ -1,6 +1,6 @@
 # Shorten My Link
 
-This is a sweb application that allows you to shorten long URLs, creating short links.
+This is a web application that allows you to shorten long URLs, creating custom short links.
 
 ## Installation and Setup
 
