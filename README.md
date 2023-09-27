@@ -128,5 +128,72 @@ Component for creating short custom links.
 ### App
 Main application component.
 
+## Backend Modules
+### app.py
+Main application module.
+### test_app.py
+Module containing tests of the main application
 
 
+## Tests
+These tests cover various aspects of my Flask application, including URL validation, database operations, URL redirection, and the generation of short links. They help ensure that my application functions correctly and handles different scenarios appropriately.
+
+1. **test_get_long_url**:
+   - Sends a POST request with a valid long URL.
+   - Checks if the response status code is 200 (OK).
+
+2. **test_validate_url**:
+   - Sends a POST request with an invalid long URL.
+   - Checks if the response status code is 400 (Bad Request).
+   - Checks if the response data contains the message "Invalid Url."
+
+3. **test_create_db**:
+   - Checks that the 'link' table has been created in the database.
+
+4. **test_existing_db**:
+   - Checks that the 'link' table exists before creating a short link.
+   - Sends a POST request to create a short link.
+   - Checks that the 'link' table is still created after creating the short link.
+
+5. **test_existing_link_in_db**:
+   - Adds a link to the database.
+   - Sends a POST request with a long link that already exists in the database.
+   - Checks if the response status code is 200 (OK).
+
+6. **test_correct_short_url**:
+   - Sends a POST request to create a short link.
+   - Checks if the short link in the response matches the expected format (starts with "http://localhost:5000/").
+
+7. **test_data_in_db**:
+   - Sends a POST request to create a short link.
+   - Gets the short link from the response.
+   - Searches for a database entry corresponding to the short link.
+   - Checks if the entry exists in the database.
+
+8. **test_redirect_to_long_url**:
+   - Sends a POST request to create a short link.
+   - Gets the short link from the response.
+   - Sends a GET request to the short link and checks if it is redirected to the long link.
+
+9. **test_get_custom_url**:
+   - Sends a POST request to save a custom and original URL.
+   - Checks if the response status code is 200 (OK).
+
+10. **test_save_custom_url**:
+    - Sends a POST request to create a short link with a custom short URL.
+    - Checks if the response status code is 200 (OK).
+    - Gets the custom link from the response.
+    - Searches for a database entry corresponding to the custom short link.
+    - Checks if the entry exists in the database.
+
+11. **test_redirect_from_custom_to_long_url**:
+    - Sends a POST request to save a custom URL.
+    - Gets the custom link from the response.
+    - Sends a GET request to the custom link and checks if it is redirected to the long link.
+
+12. **test_generate_different_short_links**:
+    - Sends a POST request to create the first short link.
+    - Gets the short link from the response.
+    - Sends a POST request to create the second short link with a different long URL.
+    - Gets the short link from the response.
+    - Checks that the generated short links are different.
