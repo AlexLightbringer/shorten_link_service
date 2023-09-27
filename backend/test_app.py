@@ -1,6 +1,8 @@
 import unittest
-from app import app, db, is_valid_url, Link, create_short_url, save_custom_urls, redirect_to_long_url
+
 from sqlalchemy import inspect
+
+from app import app, db, Link
 
 
 class TestCreateUrl(unittest.TestCase):
@@ -152,6 +154,7 @@ class TestCreateUrl(unittest.TestCase):
 
         # check that the generated short links are different
         self.assertNotEqual(short_url1, short_url2)
+
 
 if __name__ == '__main__':
     unittest.main()
