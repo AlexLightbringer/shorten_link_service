@@ -32,7 +32,7 @@ npm install
 1. Create a PostgreSQL database named flask.
 
 2. In the app.py file:
-Replace 'postgresql://postgres:postgres@localhost/flask' with your database connection string in the app.config['SQLALCHEMY_DATABASE_URI'] variable.
+Replace 'postgresql://postgres:postgres@localhost/flask' with your database connection string in the app.py ['SQLALCHEMY_DATABASE_URI'] variable.
 
 ## Run the Server
 
@@ -48,6 +48,33 @@ Start the React app:
 ```npm start```
 React will be running at http://localhost:3000.
 
+## Running the Project Using Docker
+To run this project using Docker, follow these steps:
+
+1. Make sure you have Docker installed on your computer. If Docker is not already installed, you can download it from the [official Docker website](https://docs.docker.com/get-docker/).
+   
+2. Clone the project repository to your computer if you haven't already:
+
+   ```
+   git clone <repository-url>
+   cd <project-directory>
+   ```
+
+3. Create a database
+
+4. Now, you can start the Docker containers for your project using the following command:
+   ```
+   docker-compose up --build
+   ```
+
+5. After successfully starting the containers, your project will be accessible in a web browser at the following addresses:
+- React frontend: http://localhost:3000
+- Flask backend: http://localhost:5000
+
+6. You can stop the Docker containers using the following command:
+   ```
+   docker-compose down
+   ```
 ## Usage
 
 To shorten a long URL:
