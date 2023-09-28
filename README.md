@@ -124,21 +124,17 @@ Response
 ### POST & GET /custom
 
 Creates a short custom link based on the provided long URL.
-Request Body
+
+Request Body:
 ```
 {
   "long_url": "https://example.com/very/long/url"
 }
 ```
+Response:
 ```
 {
-  "short_url": "custom"
-}
-```
-Response
-```
-{
-  "short_url": "http://localhost:5000/custom"
+  "custom_link": "http://localhost:5000/custom/unique-short-url"
 }
 ```
 
