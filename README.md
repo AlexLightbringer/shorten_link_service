@@ -37,7 +37,7 @@ Replace 'postgresql://postgres:postgres@localhost/flask' with your database conn
 ## Run the Server
 
 Start the Flask server:
-```python app.py```
+```flask run```
 Flask will be running at http://localhost:5000.
 
 ## Run the React
