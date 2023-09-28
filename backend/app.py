@@ -6,7 +6,7 @@ import validators
 
 # initialize the application
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/flask'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@postgres-container:5432/flask'
 db = SQLAlchemy(app)
 
 
@@ -96,4 +96,4 @@ def redirect_to_long_url(short_url):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
