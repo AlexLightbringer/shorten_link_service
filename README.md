@@ -34,10 +34,14 @@ npm install
 2. In the app.py file:
 Replace 'postgresql://postgres:postgres@localhost/flask' with your database connection string in the app.py ['SQLALCHEMY_DATABASE_URI'] variable.
 
+3. In the init.sql replace 'flask' with your database name
+
 ## Run the Server
 
 Start the Flask server:
-```flask run```
+```
+flask run
+```
 Flask will be running at http://localhost:5000.
 
 ## Run the React
@@ -45,7 +49,9 @@ Flask will be running at http://localhost:5000.
 Go back to the project's root folder if you are inside the backend folder.
 
 Start the React app:
-```npm start```
+```
+npm start
+```
 React will be running at http://localhost:3000.
 
 ## Running the Project Using Docker
@@ -60,7 +66,7 @@ To run this project using Docker, follow these steps:
    cd <project-directory>
    ```
 
-3. Create a database
+3. Make database-related changes as it is written in the 'Configure the Database' instructions if necessary 
 
 4. Now, you can start the Docker containers for your project using the following command:
    ```
@@ -220,3 +226,16 @@ These tests cover various aspects of my Flask application, including URL validat
     - Sends a POST request to create the second short link with a different long URL.
     - Gets the short link from the response.
     - Checks that the generated short links are different.
+
+## Running Locust for Load Testing
+To perform load testing on your application using Locust, follow these steps:
+
+1. Open your web browser and go to http://localhost:8089 to access the Locust web interface running in the Docker container.
+
+2. Configure the number of users, spawn rate, and other parameters for your load test.
+- Host by default:
+```
+http://flask-backend:5000
+```
+
+3. Start the load test, and Locust will simulate user behavior to test the performance of your application.
