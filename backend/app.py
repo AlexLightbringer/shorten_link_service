@@ -67,6 +67,12 @@ def save_custom_urls():
     if not is_valid_url(long_url):
         return jsonify({'error': 'Invalid Url'}), 400
 
+    # check if the short link already exists in the database
+    existing_link = Link.query.filter_by(short_url=short_url).first()
+
+    if existing_link:
+        return jsonify({'error': 'Short URL already exists'}), 400
+
     # pass the data to the db
     links = Link(long_url=long_url, short_url=short_url)
 
